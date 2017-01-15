@@ -1,2 +1,2 @@
-### Universal App work with React + Redux (ES6 version)
-- [JavascriptServices](https://github.com/aspnet/JavaScriptServices) works with ES6 for those people want to use only ES6 in their projects.
+### Universal Web Application (.NET Core and React + Redux + thunk middleware) 
+- For those people, who want to use [JavascriptServices](https://github.com/aspnet/JavaScriptServices) with ES2015.
