@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
@@ -10,11 +11,8 @@ class Counter extends Component {
     render() {
         return <div>
             <h1>Counter</h1>
-
             <p>This is a simple example of a React component.</p>
-
             <p>Current count: <strong>{this.props.count}</strong></p>
-
             <button onClick={() => { this.props.increment() } }>+</button>&nbsp;
             <button onClick={() => { this.props.decrement() } }>-</button>
         </div>;
@@ -31,14 +29,9 @@ const mapStateToProps = (state) => ({
     count: state.counter.count
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    increment: () => {
-        dispatch(increment());
-    },
-    decrement: () => {
-        dispatch(decrement());
-    }
-});
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators(CounterStore.actionCreators, dispatch)
+);
 
 export default connect(
     mapStateToProps,

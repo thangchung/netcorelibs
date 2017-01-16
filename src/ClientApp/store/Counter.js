@@ -1,7 +1,9 @@
 import { Action, Reducer, ThunkAction } from 'redux';
 
-export const increment = () => ({ type: 'INCREMENT_COUNT' });
-export const decrement = () => ({ type: 'DECREMENT_COUNT' });
+export const actionCreators = {
+    increment: () => ({ type: 'INCREMENT_COUNT' }),
+    decrement: () => ({ type: 'DECREMENT_COUNT' })
+};
 
 const initialState = {
     count: 0
