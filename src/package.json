@@ -30,6 +30,7 @@
     "webpack": "^1.13.2",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^0.14.1",
-    "webpack-node-externals": "^1.5.4"
+    "webpack-node-externals": "^1.5.4",
+    "webpack-bundle-analyzer": "^2.2.1"
   }
 }

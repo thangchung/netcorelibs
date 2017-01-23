@@ -4,6 +4,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var merge = require('webpack-merge');
 var nodeExternals = require('webpack-node-externals');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Configuration in common to both client-side and server-side bundles
 var sharedConfig = () => ({
@@ -36,7 +37,8 @@ var clientBundleConfig = merge(sharedConfig(), {
         new webpack.DllReferencePlugin({
             context: __dirname,
             manifest: require('./wwwroot/dist/vendor-manifest.json')
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ].concat(isDevBuild ? [
         // Plugins that apply in development builds only
         new webpack.SourceMapDevToolPlugin({
